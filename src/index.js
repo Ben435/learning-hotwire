@@ -2,9 +2,9 @@ const express = require('express')
 const createError = require('http-errors')
 const path = require('path')
 
-const app = express()
 const dirname = path.dirname(__dirname)
-console.log(dirname, __dirname)
+
+const app = express()
 const port = 3000
 
 app.set('views', path.join(dirname, 'views'))
