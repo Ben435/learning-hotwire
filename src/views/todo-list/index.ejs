@@ -2,11 +2,16 @@
 
 <h2>Todos</h2>
 
-<div id="todo-list">
-    <% for (const todo of todos) { %>
-        <%- include('./list-item', { todo }) %>
-    <% } %>
-</div>
+<turbo-frame id="todo-list">
+    <form action="list" method="GET">
+        <button>Refresh</button>
+    </form>
+    <div class="todo-list">
+        <% for (const todo of todos) { %>
+            <%- include('./list-item', { todo }) %>
+        <% } %>
+    </div>
+</turbo-frame>
 
 <turbo-frame id="create-todo">
     <form action="actions/add" method="POST">

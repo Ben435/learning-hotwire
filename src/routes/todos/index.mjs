@@ -1,12 +1,12 @@
 import listRoutes from './list.mjs'
 import express from 'express'
-import { addTodo } from './todoStore.mjs'
+import { addTodo, getTodos } from './todoStore.mjs'
 
 const routerFactory = () => {
     const router = express.Router()
     router.use('/list', listRoutes());
 
-    router.post('/actions/add', (req, resp) => {
+    router.post('/actions/add', (req, res) => {
         const body = req.body
 
         addTodo({
@@ -14,7 +14,7 @@ const routerFactory = () => {
             content: body.content,
         })
 
-        resp.send('cool')
+        return res.render('todo-list/index', { todos: getTodos() })
     })
 
     return router
