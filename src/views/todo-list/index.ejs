@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<h2>Todos</h2>
+
+<div id="todo-list">
+    <% for (const todo of todos) { %>
+        <%- include('./list-item', { todo }) %>
+    <% } %>
+</div>
+
+<turbo-frame id="create-todo">
+    <form action="actions/add" method="POST">
+        <input type="text" name="content" placeholder="What to do?">
+        <button type="submit" value="add">Create new todo</button>
+    </form>
+</turbo-frame>
+
+<%- include('../partials/footer') %>

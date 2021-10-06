@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
+    "start": "node src/index.mjs",
     "build": "webpack"
   },
   "author": "Ben Clare <ben.clare2@gmail.com>",
@@ -16,6 +16,7 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "http-errors": "^1.8.0"
