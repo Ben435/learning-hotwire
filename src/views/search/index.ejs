@@ -5,6 +5,9 @@
 <p>See if can make a complex UI widget in Stimulus</p>
 <p>In this case, a search box with auto-complete from an API</p>
 
-<input placeholder="Search fruit"/>
+<div data-controller="search">
+    <input data-search-target="input" data-action="input -> search#input" type="text" placeholder="Search fruit"/>
+    <ul data-search-target="suggestions"></ul>
+</div>
 
 <%- include('../partials/footer') %>

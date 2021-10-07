@@ -2,6 +2,7 @@ import express from "express";
 import createError from "http-errors";
 import path from "path";
 import todoRoutes from "./routes/todos/index.mjs";
+import searchRoutes from "./routes/search/index.mjs";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (_req, res) => res.render("index"));
 app.use("/todos", todoRoutes());
+app.use("/search", searchRoutes());
 
 app.use((_req, _res, next) => {
   next(createError(404));
