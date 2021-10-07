@@ -1,7 +1,15 @@
 # learning-hotwire
 
+Setup:
+
+* `nvm use`
+* `npm i`
+* Terminal 1: `npm run build:watch`
+* Terminal 2: `npm start`
+
 ## Notes:
 
+Broken down by "component" of Hotwire, covering both Turbo and Stimulus
 
 ### Turbo-drive
 
@@ -74,6 +82,12 @@ Eg: edit attributes or values of specific elements.
 It makes _sense_, but I don't see how it doesn't get messy with any sort of scale. I guess it doesn't by not having any scale?
 
 
+#### Side note
+
+Stimulus would be incredibly useful for making those drop-in "plugins" we see in older JS.
+
+Eg: a single `<script src="carousel-widget-lib">` tag and mark a `<div class="be-a-carousel">` as neccessary, and you get a carousel widget, or a hamburger menu etc.
+
 ## Verdict
 
 **The Good**
@@ -87,7 +101,7 @@ It makes _sense_, but I don't see how it doesn't get messy with any sort of scal
 * Its just server rendered templates, with a bunch of fixes
     * Still ties your frontend to your backend BFF
     * Still got issues maintaining state between navigations
-    * Still hard to do lots of complex stuff (eg: extensive form validation, complex user flows, etc.)
+    * Still hard to do lots of complex stuff (eg: extensive form validation, widgets that stay independent of user journey)
 
 Had a chat with others, had a think, I think its good:
 
@@ -97,6 +111,9 @@ Had a chat with others, had a think, I think its good:
 * The backend BFF is required for SSR for a SPA _anyway_, so its approximately as complex
 * Its _way_ easier to manage than a SPA
 
+May add to an SSG or similar, as I think it'll be very valuable there.
+
+Use the SSG as a content-manager, and then this to provide the smart stuff and widgets it may need.
 
 ## Stuff to try:
 
@@ -104,3 +121,5 @@ Had a chat with others, had a think, I think its good:
     * Works ok, had to resort to injecting strings into innerHTML. May try streams with it, but can't figure out how to trigger.
 * Page transitions with maintained state, eg: search + details and back with search terms maintained
 * Form validation via streams
+    * This works pretty well, but get a tieing between 2 templates, being the "streams" and the base template its validating.
+    * Perfectly workable, especially with some rules and conventions around it
