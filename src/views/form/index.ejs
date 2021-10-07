@@ -7,10 +7,13 @@
 <turbo-frame id="form">
 <form method="post" action="form/actions/create">
     <input name="name" placeholder="Name" type=text>
+    <label for="name" class="error" id="name-error"></label>
     <br>
     <input name="dob" placeholder="Date Of Birth (DD/MM/YY)" type="date">
+    <label for="dob" class="error" id="dob-error"></label>
     <br>
     <input name="fingers" placeholder="Number of Fingers" type="number">
+    <label for="fingers" class="error" id="fingers-error"></label>
     <br>
     <button type="submit">Submit</button>
 </form>
