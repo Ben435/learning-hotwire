@@ -1,3 +1,3 @@
-const Turbo = require('@hotwired/turbo')
+const Turbo = require("@hotwired/turbo");
 
-Turbo.start()
+Turbo.start();

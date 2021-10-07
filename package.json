@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.mjs",
-    "build": "webpack"
+    "build": "webpack",
+    "lint:fix": "prettier -w src/**/*.mjs app/**/*.js"
   },
   "author": "Ben Clare <ben.clare2@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@hotwired/turbo": "^7.0.1",
+    "prettier": "^2.4.1",
     "webpack": "^5.57.1",
     "webpack-cli": "^4.8.0"
   },
