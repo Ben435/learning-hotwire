@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h2>Form Validation</h2>
+
+<p>Try form validation via stream</p>
+
+<turbo-frame id="form">
+<form method="post" action="form/actions/create">
+    <input name="name" placeholder="Name" type=text>
+    <br>
+    <input name="dob" placeholder="Date Of Birth (DD/MM/YY)" type="date">
+    <br>
+    <input name="fingers" placeholder="Number of Fingers" type="number">
+    <br>
+    <button type="submit">Submit</button>
+</form>
+</turbo-frame>
+
+
+<%- include('../partials/footer') %>

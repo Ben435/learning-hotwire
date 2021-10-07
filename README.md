@@ -101,5 +101,6 @@ Had a chat with others, had a think, I think its good:
 ## Stuff to try:
 
 * Some complex user driven interaction, eg: search with suggestions
+    * Works ok, had to resort to injecting strings into innerHTML. May try streams with it, but can't figure out how to trigger.
 * Page transitions with maintained state, eg: search + details and back with search terms maintained
 * Form validation via streams
