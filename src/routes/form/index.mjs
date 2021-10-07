@@ -17,14 +17,16 @@ const routerFactory = () => {
 
     let dobError = "";
     if (!body.dob) {
-      nameError = "Date of birth required";
+      dobError = "Date of birth required";
     }
 
     let fingersError = "";
-    if (body.dob.fingers <= 0 || body.dob.fingers > 20) {
-      nameError = "Finger count required";
+    const fingers = Number(body.fingers)
+    if (fingers <= 0 || fingers > 20) {
+      fingersError = "Finger count required";
     }
 
+    res.setHeader('Content-Type', 'text/vnd.turbo-stream.html')
     return res.render("form/error-stream", {
       nameError,
       dobError,

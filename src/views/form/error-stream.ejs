@@ -1,23 +1,17 @@
-<% if (nameError) { %>
 <turbo-stream action="update" target="name-error">
     <template>
-        <%= nameError %>
+        <%= nameError || '' %>
     </template>
 </turbo-stream>
-<% } %>
 
-<% if (dobError) { %>
 <turbo-stream action="update" target="dob-error">
     <template>
-        <%= dobError %>
+        <%= dobError || '' %>
     </template>
 </turbo-stream>
-<% } %>
 
-<% if (fingersError) { %>
 <turbo-stream action="update" target="fingers-error">
     <template>
-        <%= fingersError %>
+        <%= fingersError || '' %>
     </template>
 </turbo-stream>
-<% } %>
