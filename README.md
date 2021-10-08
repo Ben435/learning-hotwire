@@ -7,6 +7,13 @@ Setup:
 * Terminal 1: `npm run build:watch`
 * Terminal 2: `npm start`
 
+Via docker:
+
+* `docker build -t learning-hotwire .`
+* `docker run -p 3000:3000 -d learning-hotwire`
+
+Stop via `docker stop <instance-id>`
+
 ## Notes:
 
 Broken down by "component" of Hotwire, covering both Turbo and Stimulus
@@ -121,8 +128,16 @@ Had a chat with others, had a think, I think its good:
 * It crosses off an awful lot of the "cons" to server rendered templates
 * The backend BFF is required for SSR for a SPA _anyway_, so its approximately as complex
 * Its _way_ easier to manage than a SPA
+    * No render cycles
+    * Less state === better state
+    * If its static content, its literally just HTML and CSS
 
-May add to an SSG or similar, as I think it'll be very valuable there.
+Primary concern is around overuse of Stimulus or Turbo-streams. 
+
+* Stimulus seems fine, as long as it only manipulates what its intended to manipulate (eg: DOM attributes and values, don't add or remove entire elements).
+* Turbo-streams scares me. Editing the DOM from the backend seems like an easy way to get edge case bugs, especially if the 
+
+May add to an SSG or similar, as I think it'll be very effective there.
 
 Use the SSG as a content-manager, and then this to provide the smart stuff and widgets it may need.
 
