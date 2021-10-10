@@ -82,7 +82,7 @@ It does tie a response directly to a given template, as needs to ID it. However,
 
 While Turbo-frames allows for handling on the backend and changing a sub-section of the page, and Turbo-streams allows editing of DOM elements from serverside, this allows client side editing of DOM elements.
 
-Advanced validation, browser API interaction, handling events Turbo-frames can't handle, etc.
+Advanced validation, browser API interaction, handling UI events Turbo-frames can't handle, etc.
 
 
 Interestingly, while most frameworks try to store state in JS and blow away the DOM as required, this does the inverse.
@@ -109,7 +109,7 @@ Eg: a single `<script src="carousel-widget-lib">` tag and mark a `<div class="be
 **The Good**
 
 * Its really simple, learn it real quick
-* Combined with server-rendered templates, its incredibly quick
+* Combined with server-rendered templates, its incredibly performant for first-load
 * The problems it wants to fix, it fixes effectively
 
 **The Bad**
@@ -124,7 +124,7 @@ Eg: a single `<script src="carousel-widget-lib">` tag and mark a `<div class="be
 Had a chat with others, had a think, I think its good:
 
 * Its simple, 90% is "for free" essentially
-* Its server rendered by default, so very quick
+* Its server rendered by default, so very performant
 * It crosses off an awful lot of the "cons" to server rendered templates
 * The backend BFF is required for SSR for a SPA _anyway_, so its approximately as complex
 * Its _way_ easier to manage than a SPA
