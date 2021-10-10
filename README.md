@@ -114,10 +114,10 @@ Eg: a single `<script src="carousel-widget-lib">` tag and mark a `<div class="be
 
 **The Bad**
 
-* Its just server rendered templates, with a bunch of fixes
+* It seems to still just be server rendered templates, with a bunch of fixes
     * Still ties your frontend to your backend BFF
     * Still got issues maintaining state between navigations
-    * Still hard to do complex stuff (eg: extensive form validation, widgets that stay independent of user journey, highly dynamic components)
+    * Still hard to do complex frontend stuff (eg: extensive form validation, widgets that stay independent of user journey, highly dynamic components)
 
 **Verdict**
 
