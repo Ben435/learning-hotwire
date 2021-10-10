@@ -95,7 +95,7 @@ Eg: edit attributes or values of specific elements.
 
 It makes _sense_, but I don't see how it doesn't get messy with any sort of scale. I guess it doesn't by not having much scale? As you only need it for this weird edge case of logic, where you need a very complex component, so shouldn't need many of these for most apps.
 
-Eg: maybe just 1 for each "widget", eg: filtering a list of results, auto-complete search, 
+Eg: maybe just 1 for each "widget", eg: filtering a list of results, auto-complete search, etc.
 
 
 #### Side note
@@ -135,7 +135,7 @@ Had a chat with others, had a think, I think its good:
 Primary concern is around overuse of Stimulus or Turbo-streams. 
 
 * Stimulus seems fine, as long as it only manipulates what its intended to manipulate (eg: DOM attributes and values, don't add or remove entire elements).
-* Turbo-streams scares me. Editing the DOM from the backend seems like an easy way to get edge case bugs, especially if the 
+* Turbo-streams scares me. Editing the DOM from the backend seems like an easy way to get edge case bugs, especially given how disconnected it can all be (server response or WSS trigger, affecting separate templates depending on whats loaded at the time).
 
 May add to an SSG or similar, as I think it'll be very effective there.
 
