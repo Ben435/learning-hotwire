@@ -14,6 +14,7 @@ const routerFactory = () => {
         .filter((fruit) => fruit.toLowerCase().includes(usableTerm))
         .slice(0, 10); // Only a few
 
+      res.setHeader('Content-Type', 'text/vnd.turbo-stream.html')
       return res.render("search/results", { term, options });
     }
 

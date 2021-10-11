@@ -5,9 +5,11 @@
 <p>See if can make a complex UI widget in Stimulus</p>
 <p>In this case, a search box with auto-complete from an API</p>
 
-<div data-controller="search">
-    <input data-search-target="input" data-action="input -> search#input" type="text" placeholder="Search fruit"/>
+<turbo-frame id="search">
+<form data-controller="on-type-submit" data-on-type-submit-target="form" method="get">
+    <input data-action="input -> on-type-submit#input" type="text" name="term" placeholder="Search fruit"/>
     <ul id="options"></ul>
-</div>
+</form>
+</turbo-frame>
 
 <%- include('../partials/footer') %>
