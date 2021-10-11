@@ -76,6 +76,8 @@ Implied to be used for essentially augmenting your templates, eg: on form submit
 
 It does tie a response directly to a given template, as needs to ID it. However, I could see this getting abstracted away as a "component" of sorts, with standardised fields etc, not sure what the convention is.
 
+> Side note here, you can pass an ID back to the API call, to then template into the turbo-stream target. Makes it a bit more complex, and the extra fields in the forms can be abstracted away with `<% partial(...)%>` or equivilant, but totally doable.
+
 ### Stimulus
 
 "I need to do something raw HTML can't do, on the frontend"
@@ -135,6 +137,7 @@ Had a chat with others, had a think, I think its good:
 Primary concern is around overuse of Stimulus or Turbo-streams. 
 
 * Stimulus seems fine, as long as it only manipulates what its intended to manipulate (eg: DOM attributes and values, don't add or remove entire elements).
+    * Update: Stimulus deferring to Turbo-streams fixes this issue, as basically just using Stimulus as a "trigger" to get some Turbo-streams updates.
 * Turbo-streams scares me. Editing the DOM from the backend seems like an easy way to get edge case bugs, especially given how disconnected it can all be (server response or WSS trigger, affecting separate templates depending on whats loaded at the time).
 
 May add to an SSG or similar, as I think it'll be very effective there.
@@ -145,6 +148,7 @@ Use the SSG as a content-manager, and then this to provide the smart stuff and w
 
 * Some complex user driven interaction, eg: search with suggestions
     * Works ok, had to resort to injecting strings into innerHTML. May try streams with it, but can't figure out how to trigger.
+    * Got some suggestions, found a nicer way to do it via Turbo-streams. Much nicer, and really reduces the Stimulus complexity.
 * Page transitions with maintained state, eg: search + details and back with search terms maintained
 * Form validation via streams
     * This works pretty well, but get a tieing between 2 templates, being the "streams" and the base template its validating.
