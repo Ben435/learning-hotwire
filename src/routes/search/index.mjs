@@ -14,7 +14,7 @@ const routerFactory = () => {
         .filter((fruit) => fruit.toLowerCase().includes(usableTerm))
         .slice(0, 10); // Only a few
 
-      return res.json(options);
+      return res.render("search/results", { term, options });
     }
 
     return res.render("search/index");
