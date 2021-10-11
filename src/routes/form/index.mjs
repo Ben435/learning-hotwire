@@ -21,12 +21,12 @@ const routerFactory = () => {
     }
 
     let fingersError = "";
-    const fingers = Number(body.fingers)
+    const fingers = Number(body.fingers);
     if (fingers <= 0 || fingers > 20) {
       fingersError = "Finger count required";
     }
 
-    res.setHeader('Content-Type', 'text/vnd.turbo-stream.html')
+    res.setHeader("Content-Type", "text/vnd.turbo-stream.html");
     return res.render("form/error-stream", {
       nameError,
       dobError,

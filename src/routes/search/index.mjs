@@ -6,6 +6,7 @@ const routerFactory = () => {
 
   router.get("/", (req, res) => {
     const term = req.query["term"];
+    const optionsTargetId = req.query["options-target"];
 
     let options = [];
     if (term) {
@@ -14,8 +15,8 @@ const routerFactory = () => {
         .filter((fruit) => fruit.toLowerCase().includes(usableTerm))
         .slice(0, 10); // Only a few
 
-      res.setHeader('Content-Type', 'text/vnd.turbo-stream.html')
-      return res.render("search/results", { term, options });
+      res.setHeader("Content-Type", "text/vnd.turbo-stream.html");
+      return res.render("search/results", { term, options, optionsTargetId });
     }
 
     return res.render("search/index");
